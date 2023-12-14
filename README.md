@@ -1,4 +1,4 @@
-# Yib's Transfer - Transfer Files Over WiFi by Yibloa
+# Yib's Transfer - Transfer Files Over WiFi
 
 
 Yib's Transfer is a simple and user-friendly application that allows you to transfer files between devices over a local WiFi network. This application provides a seamless and efficient way to share files without the need for an internet connection or any external cables.
@@ -43,4 +43,6 @@ We value your feedback and are committed to improving the Yib's Transfer experie
 
 Thank you for using Yib's Transfer to simplify your file sharing needs!
 
+## Author
 
+👤 **Aquiles O Rei**
