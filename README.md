@@ -39,7 +39,7 @@ Yib's Transfer prioritizes your privacy and security. All file transfers occur o
 
 ## Feedback and Support
 
-We value your feedback and are committed to improving the Yib's Transfer experience. If you encounter any issues, have suggestions for improvements, or need assistance, please don't hesitate to contact us at achillezongo07@gmail.com.
+We value your feedback and are committed to improving the Yib's Transfer experience. If you encounter any issues, have suggestions for improvements, or need assistance, please don't hesitate to contact me at achillezongo07@gmail.com.
 
 Thank you for using Yib's Transfer to simplify your file sharing needs!
 
