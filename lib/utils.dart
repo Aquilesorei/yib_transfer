@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'dart:math';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:path/path.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:yifi/yifi.dart';
@@ -10,6 +11,14 @@ import 'package:yifi/yifi.dart';
 
 const String _DownloadDirName = "Yibloa";
 final sep = Platform.isWindows ? "\\" : "/";
+
+
+
+Future<int> getAndroidSDkVersion() async {
+  var androidInfo = await DeviceInfoPlugin().androidInfo;
+  return androidInfo.version.sdkInt;
+}
+
 
 
 
@@ -203,8 +212,9 @@ Future<String> _getAndroidDownloadFolder(String filename,String mimeType) async 
   const folderName = _DownloadDirName;
   final path = Directory("storage/emulated/0/$folderName");
 
-  final vers = await Yifi.getPlatformVersion() ?? 0;
-  final Permission permission =  (vers <13) ? Permission.storage : Permission.manageExternalStorage;
+
+  int vers =   await getAndroidSDkVersion();
+  final Permission permission =  (vers <33) ? Permission.storage : Permission.manageExternalStorage;
   var status = await permission.status;
   if (!status.isGranted) {
 

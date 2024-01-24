@@ -204,8 +204,7 @@ class FileTransfer {
 
 
 
-  Future<bool> register() async {
-    PeerEndpoint endpoint = connectedEndpoints.last;
+  Future<bool> register(PeerEndpoint endpoint) async {
     var url = Uri.http(endpoint.format(), '/register');
 
     var headers = {'Content-Type': 'application/json'};

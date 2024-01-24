@@ -101,7 +101,7 @@ class _AndroidViewState extends State<_AndroidView>
   }
 
   Future<void> _requestStoragePermission() async {
-    final int androidVersion = await Yifi.getPlatformVersion() ?? 0;
+    final int androidVersion = int.parse(Platform.operatingSystemVersion);
 
     Permission permission = Permission.storage;
 

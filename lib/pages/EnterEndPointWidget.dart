@@ -48,7 +48,7 @@ class _EnterEndPointWidgetState extends State<EnterEndPointWidget> {
                     final ep = PeerEndpoint.parse(enteredEndpoint);
                     FileTransfer.instance.connectedEndpoints.add(ep);
 
-                    FileTransfer.instance.register();
+                    FileTransfer.instance.register(ep);
 
                     setState(() {
                       _validationError = '';

@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:installed_apps/installed_apps.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -11,6 +13,7 @@ import 'package:yib_transfer/Managers/WifiManager.dart';
 import 'package:yib_transfer/Providers/FileTransferProvider.dart';
 import 'package:yib_transfer/constants.dart';
 import 'package:yib_transfer/pages/PeerConnectionSetupPage.dart';
+import 'package:yifi/models/DeviceInfo.dart';
 import 'package:yifi/yifi.dart';
 
 import '../components/AppDrawer.dart';
@@ -18,6 +21,7 @@ import '../models/PeerEndpoint.dart';
 import '../routes/FileTransfert.dart';
 import '../routes/routes.dart';
 import '../utils.dart';
+import 'NetworkAnalyis widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,8 +35,10 @@ class _HomePageState extends State<HomePage> {
   bool? _isWiFiAPEnabled;
 
   bool permissionGranted = false;
+
   @override
   void initState() {
+
     super.initState();
 
     if (Platform.isAndroid) {
@@ -48,6 +54,7 @@ class _HomePageState extends State<HomePage> {
       getWifiState();
     }
   }
+
 
   Future<void> getWifiState() async {
     if (Platform.isAndroid) {
@@ -78,6 +85,8 @@ class _HomePageState extends State<HomePage> {
       }
     }
 
+
+
     final transferProvider = Provider.of<FileTransferProvider>(context);
 
     FileTransfer.instance.startServer(
@@ -87,6 +96,8 @@ class _HomePageState extends State<HomePage> {
         },
         onFileReceived: (File receivedFile) {},
         provider: transferProvider);
+    if ((_isWiFiAPEnabled == null )|| (_isConnected == null)) return const Center(child: CircularProgressIndicator());
+
     return Scaffold(
       drawer: const AppDrawer(),
       endDrawerEnableOpenDragGesture: true,
@@ -109,20 +120,17 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                 onPressed: () {
                   if (Platform.isAndroid) {
-                    if ((_isWiFiAPEnabled == null )|| (_isConnected == null)) {
-                      showModalBottomSheet(
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (_) => Wrap(children: [
-                          PeerConnectionSetupPage(
-                              nextDest: Platform.isAndroid
-                                  ? Routes.scan
-                                  : Routes.enterEndpoint)
-                        ]),
-                      );
-                    } else {
-                      Routes.toScanner();
-                    }
+                      showDiscoveryChoiceDialog(context).then((choice) {
+                        if (choice == Choice.qrCode) {
+                          Routes.toScanner();
+                        } else if (choice == Choice.networkDiscovery) {
+                        QR.toName(Routes.analyis);
+                        }
+
+
+                      });
+
+
                   } else {
                     Routes.toEnterEndPoint();
                   }
@@ -167,11 +175,12 @@ class _HomePageState extends State<HomePage> {
       Permission.camera,
     ];
 
-    final int? androidVersion = await Yifi.getPlatformVersion();
 
-    if (androidVersion == null) return false;
 
-    if (androidVersion < 13) {
+    final int androidSdkVersion = await getAndroidSDkVersion();
+
+
+    if (androidSdkVersion < 33) {
       permissions.add(Permission.storage);
     } else {
       permissions.add(Permission.manageExternalStorage);
@@ -253,3 +262,25 @@ class EnableWifiWidget extends StatelessWidget {
     );
   }
 }
+
+Future<Choice?> showDiscoveryChoiceDialog(BuildContext context) async {
+  return await showDialog<Choice>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: const Text('Connect Device'),
+      content: const Text('How would you like to connect your device?'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context, Choice.qrCode),
+          child: const Text('Scan QR Code'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context, Choice.networkDiscovery),
+          child: const Text('Use Network Discovery'),
+        ),
+      ],
+    ),
+  );
+}
+
+enum Choice { qrCode, networkDiscovery }

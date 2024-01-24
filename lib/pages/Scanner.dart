@@ -190,7 +190,7 @@ class _QRScannerState extends State<QRScanner> {
               _registering= true;
             });
             /// register
-            FileTransfer.instance.register().then((success) {
+            FileTransfer.instance.register( FileTransfer.instance.connectedEndpoints.last).then((success) {
               _registering = false;
               final snackBar = SnackBar(
                 content: Row(

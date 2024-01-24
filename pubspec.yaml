@@ -66,6 +66,7 @@ dependencies:
   mutex: ^3.0.1
   sembast: ^3.4.4
   process_run: ^0.13.1
+  device_info_plus: ^9.1.1
 
 
 

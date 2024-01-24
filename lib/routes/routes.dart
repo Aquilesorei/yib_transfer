@@ -5,6 +5,7 @@ import '../Managers/FlutterWifiIoT.dart';
 import '../pages/HomePage.dart';
 import '../pages/FileExplorer.dart'    deferred as exp;
 
+import '../pages/NetworkAnalyis widget.dart';
 import '../pages/PeerConnectionSetupPage.dart';
 import '../pages/TransferPage.dart'    deferred as tf;
 import '../pages/Scanner.dart'    deferred as sc;
@@ -33,6 +34,7 @@ class Routes {
   static const String  setuPage = "setup";
   static const String wscan = "wifiscanner";
   static const String hsp = "hostpotcodeqr";
+  static const analyis =  "analysis";
 
   static void toHome() => QR.to('/home');
   static void toExplorer() => QR.toName(explorer);
@@ -63,6 +65,11 @@ class Routes {
     QRoute(
         path: '/home',
         builder: () =>const HomePage()
+    ),
+    QRoute(
+        path: '/$analyis',
+        name: analyis,
+        builder: () =>const NetworkAnalysisWidget(),
     ),
     QRoute(
       name: explorer,

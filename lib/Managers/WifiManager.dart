@@ -16,6 +16,7 @@ static  Future<bool> isAndroidConnectedToWifi() => WiFiForIoTPlugin.isConnected(
 static  Future<bool> isAndroidWiFiAccessPointEnabled() =>  WiFiForIoTPlugin.isWiFiAPEnabled();
 
 
+
  static Future<List<APClient>> getClientList(bool onlyReachables, int reachableTimeout) async {
   List<APClient> htResultClient;
 
