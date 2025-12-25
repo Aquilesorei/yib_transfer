@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/PeerEndpoint.dart';
-import '../routes/FileTransfert.dart';
+import '../routes/file_transfer.dart';
 
 class EnterEndPointWidget extends StatefulWidget {
   const EnterEndPointWidget({super.key});

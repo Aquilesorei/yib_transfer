@@ -1,11 +1,10 @@
 
 import 'package:qlevar_router/qlevar_router.dart';
 
-import '../Managers/FlutterWifiIoT.dart';
 import '../pages/HomePage.dart';
 import '../pages/FileExplorer.dart'    deferred as exp;
 
-import '../pages/NetworkAnalyis widget.dart';
+import '../pages/network_analysis_widget.dart';
 import '../pages/PeerConnectionSetupPage.dart';
 import '../pages/TransferPage.dart'    deferred as tf;
 import '../pages/Scanner.dart'    deferred as sc;
@@ -14,9 +13,9 @@ import '../pages/InstalledAppPage.dart'  deferred as insta;
 import '../components/GalleryWidget.dart' deferred as gal;
 import '../pages/ProgressScreen.dart' deferred as gress;
 import '../pages/EnterEndPointWidget.dart' deferred as enter;
-import '../pages/PeerConnectionSetupPage.dart' deferred as setup;
 import '../pages/WifiScanner.dart'  deferred as wsc;
 import '../pages/HotspotQRCode.dart' deferred as hts;
+import '../pages/historyPage.dart' deferred as hist;
 import 'deferred_loader.dart';
 
 
@@ -35,6 +34,7 @@ class Routes {
   static const String wscan = "wifiscanner";
   static const String hsp = "hostpotcodeqr";
   static const analyis =  "analysis";
+  static const String history = "history";
 
   static void toHome() => QR.to('/home');
   static void toExplorer() => QR.toName(explorer);
@@ -46,6 +46,7 @@ class Routes {
   static void toEnterEndPoint() => QR.toName(enterEndpoint);
   static void toWifiScanner() => QR.toName(wscan);
   static void toHotSpotCodeQr() => QR.toName(hsp);
+  static void toHistory() => QR.toName(history);
   static void toSetupPage(String des) => QR.toName(setuPage,params: {
     "dest" : des
   });
@@ -160,6 +161,14 @@ class Routes {
       builder: () => sc.QRScanner(),
       middleware: [
         DefferedLoader(sc.loadLibrary),
+      ],
+    ),
+    QRoute(
+      name: history,
+      path: '/history',
+      builder: () => hist.HistoryPage(),
+      middleware: [
+        DefferedLoader(hist.loadLibrary),
       ],
     ),
 

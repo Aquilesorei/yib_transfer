@@ -10,7 +10,7 @@ class InstalledAppsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<AppInfo>>(
-        future: InstalledApps.getInstalledApps(true, true),
+        future: InstalledApps.getInstalledApps(withIcon: true, excludeSystemApps: false),
         builder:
             (BuildContext buildContext, AsyncSnapshot<List<AppInfo>> snapshot) {
           return snapshot.connectionState == ConnectionState.done

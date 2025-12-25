@@ -8,7 +8,7 @@ import 'package:yib_transfer/pages/InstalledAppPage.dart';
 
 import '../Providers/FileTransferProvider.dart';
 import '../components/AppDrawer.dart';
-import '../routes/FileTransfert.dart';
+import '../routes/file_transfer.dart';
 import 'FileExplorer.dart';
 import 'mediaview/AudioView.dart';
 import 'mediaview/ImageView.dart';

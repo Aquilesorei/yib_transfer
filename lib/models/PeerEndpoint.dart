@@ -55,9 +55,26 @@ class PeerEndpoint {
   @override
   int get hashCode => ip.hashCode ^ port.hashCode;
 }
+/// Validates endpoint format (ip:port)
 bool isValidEnPoint(String input) {
-  RegExp regex = RegExp(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+$');
-  return regex.hasMatch(input);
+  final parts = input.split(':');
+  if (parts.length != 2) return false;
+
+  final ip = parts[0];
+  final port = int.tryParse(parts[1]);
+
+  if (port == null || port < 1 || port > 65535) return false;
+
+  // Basic IP validation
+  final ipParts = ip.split('.');
+  if (ipParts.length != 4) return false;
+
+  for (var part in ipParts) {
+    final num = int.tryParse(part);
+    if (num == null || num < 0 || num > 255) return false;
+  }
+
+  return true;
 }
 String serializeEndpointList(List<PeerEndpoint> endpoints) {
   return jsonEncode(endpoints.map((endpoint) => endpoint.toJsonMap()).toList());

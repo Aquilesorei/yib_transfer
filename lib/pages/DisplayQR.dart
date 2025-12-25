@@ -7,7 +7,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 import '../Providers/FileTransferProvider.dart';
 import '../components/AppDrawer.dart';
-import '../routes/FileTransfert.dart';
+import '../routes/file_transfer.dart';
 import '../routes/routes.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 

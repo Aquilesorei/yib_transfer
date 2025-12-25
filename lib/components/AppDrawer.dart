@@ -52,6 +52,14 @@ class AppDrawerState extends State<AppDrawer> {
             leading: const Icon(Icons.update), // Update/refresh icon
           ),
 
+          ListTile(
+            onTap: () {
+              Routes.toHistory();
+            },
+            title: const Text('Transfer History'),
+            leading: const Icon(Icons.history),
+          ),
+
          if(Platform.isLinux) ListTile(
             onTap: () {
             //  Routes.toWifiScanner();
