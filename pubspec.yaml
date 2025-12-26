@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
 
   yifi:
-    path: ./yifi/
+    git:
+      url: https://github.com/Aquilesorei/yifi.git
 
   # UI & Icons
   cupertino_icons: ^1.0.8

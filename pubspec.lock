@@ -775,9 +775,11 @@ packages:
   yifi:
     dependency: "direct main"
     description:
-      path: yifi
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "560b282f25f4ce4452b3e6f2160ec0f67af4565a"
+      url: "https://github.com/Aquilesorei/yifi.git"
+    source: git
     version: "0.0.1"
 sdks:
   dart: ">=3.9.0 <4.0.0"
