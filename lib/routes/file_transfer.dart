@@ -77,8 +77,7 @@ class TransferResult {
   TransferResult.failure(this.fileName, this.error) : success = false;
 }
 
-/// Maximum file size for transfer (5GB)
-const int maxTransferFileSize = 5 * 1024 * 1024 * 1024;
+
 
 /// Validates a filename for security
 bool isValidFilename(String filename) {
@@ -248,18 +247,7 @@ class FileTransfer {
       return;
     }
 
-    // Security: Validate file size
-    if (request.contentLength > maxTransferFileSize) {
-      _errorController.add(TransferError(
-        type: TransferErrorType.fileTooLarge,
-        message: 'File exceeds maximum size limit',
-        fileName: fileName,
-      ));
-      request.response.statusCode = HttpStatus.requestEntityTooLarge;
-      request.response.write('File too large');
-      await request.response.close();
-      return;
-    }
+
 
     final mimeType =
         request.headers['content-type']?.first ?? "application/octet-stream";
@@ -363,16 +351,7 @@ class FileTransfer {
     try {
       final len = await file.length();
 
-      // Validate file size
-      if (len > maxTransferFileSize) {
-        final error = TransferError(
-          type: TransferErrorType.fileTooLarge,
-          message: 'File exceeds ${getFormattedFileSize(maxTransferFileSize)} limit',
-          fileName: filename,
-        );
-        _errorController.add(error);
-        return TransferResult.failure(filename, error);
-      }
+
 
       final dio = Dio(BaseOptions(
         connectTimeout: const Duration(seconds: 10),

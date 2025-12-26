@@ -12,7 +12,7 @@ ZTransfer is a simple and user-friendly application that allows you to transfer 
 
 - **Cross-Platform Compatibility:** ZTransfer is available on multiple platforms, including Android, iOS, and desktop systems. Share files between different devices seamlessly.
 
-- **No File Size Limit:** Transfer large files without worrying about file size restrictions. ZTransfer can handle files of various sizes with ease.
+- **No File Size Limit:** Transfer files of any size - streaming ensures memory efficiency even for massive files.
 
 - **Multiple File Types:** Share a wide range of file types, including documents, photos, videos, music, and more.
 
@@ -68,7 +68,6 @@ ZTransfer uses a custom **peer-to-peer HTTP protocol** with mesh networking supp
 
 - Path traversal prevention (blocks `../` attacks)
 - IP verification (prevents spoofing)
-- 5GB file size limit
 - Partial file cleanup on errors
 
 ## Development
