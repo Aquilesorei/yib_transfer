@@ -1,2 +1,2 @@
 
-const packageName = "com.yibloa.yib_transfer";
+const packageName = "com.yibloa.ztransfer";

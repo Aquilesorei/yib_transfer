@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.yibloa" "\0"
-            VALUE "FileDescription", "yib_transfer" "\0"
+            VALUE "FileDescription", "ZTransfer" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "yib_transfer" "\0"
+            VALUE "InternalName", "ztransfer" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.yibloa. All rights reserved." "\0"
-            VALUE "OriginalFilename", "yib_transfer.exe" "\0"
-            VALUE "ProductName", "yib_transfer" "\0"
+            VALUE "OriginalFilename", "ztransfer.exe" "\0"
+            VALUE "ProductName", "ZTransfer" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

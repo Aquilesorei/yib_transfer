@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yib_transfer/services/history_service.dart';
+import 'package:ztransfer/services/history_service.dart';
 import '../utils.dart';
 
 class HistoryPage extends StatefulWidget {

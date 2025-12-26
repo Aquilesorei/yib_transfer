@@ -1,17 +1,18 @@
-# Yib's Transfer - Transfer Files Over WiFi
+# ZTransfer - Transfer Files Over WiFi
 
+[![CI](https://github.com/Aquilesorei/yib_transfer/actions/workflows/ci.yml/badge.svg)](https://github.com/Aquilesorei/yib_transfer/actions/workflows/ci.yml)
 
-Yib's Transfer is a simple and user-friendly application that allows you to transfer files between devices over a local WiFi network. This application provides a seamless and efficient way to share files without the need for an internet connection or any external cables.
+ZTransfer is a simple and user-friendly application that allows you to transfer files between devices over a local WiFi network. This application provides a seamless and efficient way to share files without the need for an internet connection or any external cables.
 
 ## Features
 
-- **Easy-to-Use Interface:** Yib's Transfer is designed with simplicity in mind. The intuitive user interface makes it easy for users of all levels to transfer files effortlessly.
+- **Easy-to-Use Interface:** ZTransfer is designed with simplicity in mind. The intuitive user interface makes it easy for users of all levels to transfer files effortlessly.
 
 - **Fast and Secure:** Transfer your files quickly over a secure local WiFi connection. No internet access or data usage required.
 
-- **Cross-Platform Compatibility:** Yib's Transfer is available on multiple platforms, including Android, iOS, and desktop systems. Share files between different devices seamlessly.
+- **Cross-Platform Compatibility:** ZTransfer is available on multiple platforms, including Android, iOS, and desktop systems. Share files between different devices seamlessly.
 
-- **No File Size Limit:** Transfer large files without worrying about file size restrictions. Yib's Transfer can handle files of various sizes with ease.
+- **No File Size Limit:** Transfer large files without worrying about file size restrictions. ZTransfer can handle files of various sizes with ease.
 
 - **Multiple File Types:** Share a wide range of file types, including documents, photos, videos, music, and more.
 
@@ -19,29 +20,90 @@ Yib's Transfer is a simple and user-friendly application that allows you to tran
 
 ## How to Use
 
-1. **Download and Install:** Install Yib's Transfer from the respective app store on your device.
+1. **Download and Install:** Install ZTransfer from the respective app store on your device.
 
-2. **Open the App:** Launch the Yib's Transfer app on both the sender and receiver devices.
+2. **Open the App:** Launch the ZTransfer app on both the sender and receiver devices.
 
 3. **Connect Devices:** On the sender device, choose the "Send" option and on the receiver device, choose the "Receive" option.
 
-4. **Establish Connection:** Yib's Transfer will generate a QR code or a code that you need to enter on the receiver device to establish a connection.
+4. **Establish Connection:** ZTransfer will generate a QR code or a code that you need to enter on the receiver device to establish a connection.
 
 5. **Select Files:** Choose the files you want to transfer from the sender device.
 
-6. **Initiate Transfer:** Tap the "Send" button to initiate the transfer. Yib's Transfer will use the local WiFi network to transfer the selected files.
+6. **Initiate Transfer:** Tap the "Send" button to initiate the transfer. ZTransfer will use the local WiFi network to transfer the selected files.
 
-7. **Completion:** Once the transfer is complete, you'll receive a notification on the receiver device. You can access the transferred files within the Yib's Transfer app.
+7. **Completion:** Once the transfer is complete, you'll receive a notification on the receiver device. You can access the transferred files within the ZTransfer app.
+
+## Development
+
+### Prerequisites
+
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) >= 3.1.0
+- Android Studio / Xcode (for mobile builds)
+
+### Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/Aquilesorei/yib_transfer.git
+cd yib_transfer
+
+# Install dependencies
+flutter pub get
+
+# Run the app
+flutter run
+```
+
+### Running Tests
+
+```bash
+flutter test
+```
+
+### Building
+
+```bash
+# Android APK
+flutter build apk
+
+# Android App Bundle
+flutter build appbundle
+
+# Web
+flutter build web
+```
+
+## CI/CD
+
+This project uses GitHub Actions for continuous integration:
+
+- **CI Workflow** (`.github/workflows/ci.yml`): Runs on every push/PR
+
+  - Code analysis
+  - Unit tests
+  - Debug builds (Android & Web)
+
+- **Release Workflow** (`.github/workflows/release.yml`): Triggered on version tags
+  - Builds release APK and AAB
+  - Creates GitHub Release with artifacts
+
+To create a release:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
 
 ## Privacy and Security
 
-Yib's Transfer prioritizes your privacy and security. All file transfers occur over a local WiFi network, ensuring that your files remain within your control. No files are uploaded to the cloud or any external server during the transfer process.
+ZTransfer prioritizes your privacy and security. All file transfers occur over a local WiFi network, ensuring that your files remain within your control. No files are uploaded to the cloud or any external server during the transfer process.
 
 ## Feedback and Support
 
-We value your feedback and are committed to improving the Yib's Transfer experience. If you encounter any issues, have suggestions for improvements, or need assistance, please don't hesitate to contact me at achillezongo07@gmail.com.
+We value your feedback and are committed to improving the ZTransfer experience. If you encounter any issues, have suggestions for improvements, or need assistance, please don't hesitate to contact me at achillezongo07@gmail.com.
 
-Thank you for using Yib's Transfer to simplify your file sharing needs!
+Thank you for using ZTransfer to simplify your file sharing needs!
 
 ## Author
 

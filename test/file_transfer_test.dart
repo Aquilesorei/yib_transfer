@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yib_transfer/models/PeerEndpoint.dart';
-import 'package:yib_transfer/routes/file_transfer.dart';
+import 'package:ztransfer/models/PeerEndpoint.dart';
+import 'package:ztransfer/routes/file_transfer.dart';
 
 void main() {
   group('isValidEnPoint', () {

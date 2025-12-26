@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yib_transfer/services/history_service.dart';
+import 'package:ztransfer/services/history_service.dart';
 
 void main() {
   group('TransferHistoryItem', () {

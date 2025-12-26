@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:yib_transfer/routes/file_transfer.dart';
+import 'package:ztransfer/routes/file_transfer.dart';
 
 import '../components/AppDrawer.dart';
 import '../models/PeerEndpoint.dart';

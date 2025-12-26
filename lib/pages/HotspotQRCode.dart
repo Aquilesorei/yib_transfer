@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:yib_transfer/Managers/HotspotManager.dart';
+import 'package:ztransfer/Managers/HotspotManager.dart';
 
 
 class HotspotQRCode extends StatefulWidget {

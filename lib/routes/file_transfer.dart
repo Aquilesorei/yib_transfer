@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:network_info_plus/network_info_plus.dart';
-import 'package:yib_transfer/routes/routes.dart';
+import 'package:ztransfer/routes/routes.dart';
 import 'package:yifi/yifi.dart';
 
 import '../Providers/FileTransferProvider.dart';

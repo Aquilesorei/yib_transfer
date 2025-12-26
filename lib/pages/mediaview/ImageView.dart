@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yib_transfer/components/Gallery.dart';
+import 'package:ztransfer/components/Gallery.dart';
 
 import '../../Providers/ImageProvider.dart' as ip;
 import 'commons/MediaListScreen.dart';

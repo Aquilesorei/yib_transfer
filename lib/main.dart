@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qlevar_router/qlevar_router.dart';
-import 'package:yib_transfer/Managers/HotspotManager.dart';
-import 'package:yib_transfer/Providers/SelectionProvider.dart';
+import 'package:ztransfer/Managers/HotspotManager.dart';
+import 'package:ztransfer/Providers/SelectionProvider.dart';
 
-import 'package:yib_transfer/routes/routes.dart';
+import 'package:ztransfer/routes/routes.dart';
 
 import 'Providers/FileTransferProvider.dart';
 import 'Providers/VideoProvider.dart';

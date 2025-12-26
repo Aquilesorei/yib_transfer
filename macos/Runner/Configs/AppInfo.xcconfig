@@ -5,7 +5,7 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = yib_transfer
+PRODUCT_NAME = ZTransfer
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = com.yibloa.yibTransfer

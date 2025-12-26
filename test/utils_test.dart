@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yib_transfer/utils.dart';
+import 'package:ztransfer/utils.dart';
 
 void main() {
   group('getFormattedFileSize', () {

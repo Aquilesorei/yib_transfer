@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:qlevar_router/qlevar_router.dart';
-import 'package:yib_transfer/Managers/HotspotManager.dart';
-import 'package:yib_transfer/Managers/WifiManager.dart';
-import 'package:yib_transfer/Providers/FileTransferProvider.dart';
-import 'package:yib_transfer/pages/PeerConnectionSetupPage.dart';
+import 'package:ztransfer/Managers/HotspotManager.dart';
+import 'package:ztransfer/Managers/WifiManager.dart';
+import 'package:ztransfer/Providers/FileTransferProvider.dart';
+import 'package:ztransfer/pages/PeerConnectionSetupPage.dart';
 
 import '../components/AppDrawer.dart';
 import '../routes/file_transfer.dart';

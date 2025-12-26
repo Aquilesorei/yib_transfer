@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yib_transfer/components/PasswordTextField.dart';
+import 'package:ztransfer/components/PasswordTextField.dart';
 
 import '../Managers/HotspotManager.dart';
 
