@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qlevar_router/qlevar_router.dart';
-import 'package:wifi_iot/wifi_iot.dart';
 
 import 'package:android_intent_plus/android_intent.dart';
-import 'package:android_intent_plus/flag.dart';
 import 'package:yifi/yifi.dart';
 
 import '../Managers/HotspotManager.dart';

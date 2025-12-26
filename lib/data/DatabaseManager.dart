@@ -25,9 +25,10 @@ class DatabaseManager {
 
 
     
-    var HistoryItems =  await getAllHistoryItems();
+    var historyItems = await getAllHistoryItems();
 
-    var stu = HistoryItems.where((element) => element["id"] != null).map((e) => HistoryItem.fromJson(e)).toList();
+    // Process history items if needed
+    historyItems.where((element) => element["id"] != null).map((e) => HistoryItem.fromJson(e)).toList();
 
     
 

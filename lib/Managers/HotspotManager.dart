@@ -134,7 +134,7 @@ class HotspotManager {
     """nmcli radio wifi on """;
 
     try {
-      final res = await Shell().run(command);
+      await Shell().run(command);
 
     } catch (e) {
       print('Error running create_ap: $e');

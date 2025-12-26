@@ -24,10 +24,10 @@ class InstalledAppsPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         AppInfo app = snapshot.data![index];
                         return GestureDetector(
-                          child: AppInfoWidget(appName: app.name!,appIcon: app.icon!,versionInfo: app.getVersionInfo(),),
-                          onTap: () => InstalledApps.startApp(app.packageName!),
+                          child: AppInfoWidget(appName: app.name,appIcon: app.icon,versionInfo: app.getVersionInfo(),),
+                          onTap: () => InstalledApps.startApp(app.packageName),
                           onLongPress: () =>
-                          InstalledApps.openSettings(app.packageName!),
+                          InstalledApps.openSettings(app.packageName),
                         );
                       },
                     )
@@ -43,7 +43,7 @@ class InstalledAppsPage extends StatelessWidget {
 
 class AppInfoWidget extends StatefulWidget {
   final String appName;
-  final Uint8List appIcon;
+  final Uint8List? appIcon;
   final String versionInfo;
 
   const AppInfoWidget({
@@ -68,7 +68,9 @@ class _AppInfoWidgetState extends State<AppInfoWidget> {
           children: [
             CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: Image.memory(widget.appIcon),
+              child: widget.appIcon != null 
+                ? Image.memory(widget.appIcon!)
+                : const Icon(Icons.app_shortcut),
             ),
             Text(
               widget.appName,

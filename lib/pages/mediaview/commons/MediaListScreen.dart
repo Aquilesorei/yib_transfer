@@ -144,6 +144,7 @@ class FolderItem extends StatelessWidget {
     );
   }
 
+  // ignore: unused_element
   Future<Uint8List?> _getVideoThumbnail(String videoPath) async {
     try {
       final uint8list = await VideoThumbnail.thumbnailData(

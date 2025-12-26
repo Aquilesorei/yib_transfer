@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../routes/routes.dart';
 import 'YibImageView.dart';
-import 'GalleryWidget.dart';
 
 
 

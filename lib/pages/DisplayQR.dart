@@ -1,17 +1,11 @@
 
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-import '../Providers/FileTransferProvider.dart';
 import '../components/AppDrawer.dart';
 import '../routes/file_transfer.dart';
-import '../routes/routes.dart';
-import 'package:network_info_plus/network_info_plus.dart';
 
-import '../utils.dart';
 
 class DisplayQR extends StatefulWidget {
   const DisplayQR({super.key});

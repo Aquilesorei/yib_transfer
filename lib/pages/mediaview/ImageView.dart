@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:ztransfer/components/Gallery.dart';
 
 import '../../Providers/ImageProvider.dart' as ip;
-import 'commons/MediaListScreen.dart';
 
 class ImageView extends StatefulWidget {
   const ImageView({Key? key}) : super(key: key);

@@ -52,8 +52,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _initialized = false;
-
   @override
   void initState() {
     super.initState();
@@ -82,12 +80,6 @@ class _MyAppState extends State<MyApp> {
         ),
       );
     });
-    
-    if (mounted) {
-      setState(() {
-        _initialized = true;
-      });
-    }
   }
 
   @override
