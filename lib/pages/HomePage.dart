@@ -181,7 +181,7 @@ class _HomePageState extends State<HomePage> {
       drawer: const AppDrawer(),
       endDrawerEnableOpenDragGesture: true,
       appBar: AppBar(
-        title: const Text("Yib's Transfer"),
+        title: const Text("ZTransfer"),
         centerTitle: true,
         actions: [
           Padding(
@@ -207,7 +207,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 20),
             const Text(
-              "A File Transfer App by Yibloa",
+              "A WiFi File Transfer App",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             const SizedBox(height: 8),
@@ -316,7 +316,7 @@ class GetPermission extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                "Yib's Transfer needs access to storage, camera, and location to work properly.",
+                "ZTransfer needs access to storage, camera, and location to work properly.",
                 style: TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),

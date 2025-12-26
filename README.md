@@ -1,6 +1,6 @@
 # ZTransfer - Transfer Files Over WiFi
 
-[![CI](https://github.com/Aquilesorei/yib_transfer/actions/workflows/ci.yml/badge.svg)](https://github.com/Aquilesorei/yib_transfer/actions/workflows/ci.yml)
+[![CI](https://github.com/Aquilesorei/ztransfer/actions/workflows/ci.yml/badge.svg)](https://github.com/Aquilesorei/ztransfer/actions/workflows/ci.yml)
 
 ZTransfer is a simple and user-friendly application that allows you to transfer files between devices over a local WiFi network. This application provides a seamless and efficient way to share files without the need for an internet connection or any external cables.
 
@@ -34,6 +34,43 @@ ZTransfer is a simple and user-friendly application that allows you to transfer 
 
 7. **Completion:** Once the transfer is complete, you'll receive a notification on the receiver device. You can access the transferred files within the ZTransfer app.
 
+## Protocol
+
+ZTransfer uses a custom **peer-to-peer HTTP protocol** with mesh networking support. For full technical details, see [docs/PROTOCOL.md](docs/PROTOCOL.md).
+
+### Key Features
+
+- **Multi-Device Mesh**: Send files to ALL connected devices simultaneously
+- **Streaming I/O**: Files stream directly from/to disk (memory efficient)
+- **Peer Discovery**: Devices register and share their peer lists automatically
+
+### Architecture
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│  Device A   │◄───►│  Device B   │◄───►│  Device C   │
+│  Server +   │     │  Server +   │     │  Server +   │
+│  Client     │     │  Client     │     │  Client     │
+└─────────────┘     └─────────────┘     └─────────────┘
+         ▲                                     │
+         └─────────────────────────────────────┘
+              Any device can send to any other
+```
+
+### Endpoints
+
+| Endpoint    | Method | Purpose                    |
+| ----------- | ------ | -------------------------- |
+| `/register` | POST   | Peer discovery & mesh sync |
+| `/file`     | POST   | Stream file with progress  |
+
+### Security
+
+- Path traversal prevention (blocks `../` attacks)
+- IP verification (prevents spoofing)
+- 5GB file size limit
+- Partial file cleanup on errors
+
 ## Development
 
 ### Prerequisites
@@ -45,8 +82,8 @@ ZTransfer is a simple and user-friendly application that allows you to transfer 
 
 ```bash
 # Clone the repository
-git clone https://github.com/Aquilesorei/yib_transfer.git
-cd yib_transfer
+git clone https://github.com/Aquilesorei/ztransfer.git
+cd ztransfer
 
 # Install dependencies
 flutter pub get

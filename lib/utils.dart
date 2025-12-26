@@ -7,7 +7,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:yifi/yifi.dart';
 
 
-const String _DownloadDirName = "Yibloa";
+const String _DownloadDirName = "ZTransfer";
 final sep = Platform.isWindows ? "\\" : "/";
 
 
