@@ -154,6 +154,18 @@ jobs:
         with:
           path: artifacts
 
+      - name: List artifacts for debugging
+        run: find artifacts -type f -name "*" | head -50
+
+      - name: Flatten artifact structure
+        run: |
+          mkdir -p release-files
+          find artifacts -name "*.apk" -exec cp {} release-files/ \;
+          find artifacts -name "*.aab" -exec cp {} release-files/ \;
+          find artifacts -name "*.tar.gz" -exec cp {} release-files/ \;
+          find artifacts -name "*.zip" -exec cp {} release-files/ \;
+          ls -la release-files/
+
       - name: Get version from tag
         id: version
         run: |
@@ -170,12 +182,7 @@ jobs:
           name: ZTransfer ${{ steps.version.outputs.version }}
           draft: false
           prerelease: false
-          files: |
-            artifacts/android-release/app-release.apk
-            artifacts/android-release/app-release.aab
-            artifacts/linux-release/ztransfer-linux.tar.gz
-            artifacts/windows-release/ztransfer-windows.zip
-            artifacts/macos-release/ztransfer-macos.zip
+          files: release-files/*
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
